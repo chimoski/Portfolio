@@ -1,38 +1,525 @@
-.App {
-  text-align: center;
+/************ header **********/
+header{
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header_container {
+    text-align: center;
+    height: 100%;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/********** CTA ***********/
+.cta{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ***********HEADER SOCIALS  ****************** */
+.header_socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+.header_socials::after{
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background-color: var(--color-primary);
+
 }
 
-.App-link {
-  color: #61dafb;
+/* ***********Me ****************** */
+.me{
+    background: linear-gradient(var(--color-primary), transparent);
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius:  12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+.me img{
+    transition: all .5s ease
+}
+.me img:hover{
+    transform: scale(1.1,1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
+/* ***********Scroll down ****************** */
+.scroll_down{
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+
+/* ***********Floating nav ****************** */
+nav{
+    background: rgba(0, 0, 0, 0.3);
+    width: max-content;
+    display: block;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    left: calc(50%);
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(20px);
+}
+
+nav a{
+    background: transparent;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    display: flex;
+}
+
+nav a:hover{
+    background: rgba(0, 0, 0, 0.3);
+}
+
+nav a.active{
+    background:var(--color-bg);
+    color: var(--color-white);
+}
+
+
+/* *********** ABOUT PAGE ****************** */
+.about_container{
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+}
+.about_me{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg,transparent, var(--color-primary),transparent);
+    display: grid;
+    place-items: center;
+}
+.about_me img {
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transition);
+}
+.about_me img:hover{
     transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.about_cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+.about_card{
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+
+}
+.about_card:hover{
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    transition: var(--transition);
+    cursor: default;
+}
+.about_icons{
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+.a bout_card h5{
+    font-size: .95rem;
+}
+.about_card small {
+    font-size: .7rem;
+    color: var(--color-light);
+}
+.about_content p {
+    margin: 2rem 0 2.6rem;
+}
+
+/* ***********Experiences Page*******************/
+.experience_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.experience_container >div{
+    background-color: var(--color-bg-variant);
+    padding: 2.4rem 4rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.experience_container >div:hover{
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+.experience_container > div h3{
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.experience_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+}
+
+.experience_details{
+    display: flex;
+    gap: 1rem;
+}
+.experience-details-icon{
+    margin-top: 6px;
+    color: var(--color-primary);
+}
+
+/* ***********Services****************** */
+.services_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.service{
+    background: var(--color-bg-variant);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid  var(--color-primary);
+    height: fit-content;
+    transition: var(--transition);
+}
+
+.service:hover{
+    background:transparent;
+    border-color:var(--color-primary-variant);
+    cursor: default;
+}
+
+.service_head{
+    background: var(--color-primary);
+    padding: 2rem;
+    border-radius:  0 0 2rem 2rem;
+    box-shadow: 0 2rem 1rem rgba(0,0,0,.1);
+}
+.service_head h3 {
+    color: var(--color-bg);
+    font-size: 1rem;
+    text-align: center;
+}
+.service_list{
+    padding: 2rem;
+}
+.service_list li{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.service_list_icon{
+    color: var(--color-primary);
+    margin-top: 2px;
+}
+.service_list p{
+    font-size: .9rem;
+}
+
+/* ***********Portfolios****************** */
+.portfolio_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.5rem;
+}
+.portfolio_items{
+    background: var(--color-bg-variant);
+    padding: 1.3rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+
+}
+.portfolio_items:hover{
+    border-color: var(--color-primary-variant);
+    background: transparent;
+}
+.portfolio_item_image{
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+.portfolio_items h3{
+    margin: 1.2rem 0 2rem;
+}
+
+.portfolio_item_cta{
+    display: flex;
+    gap: 1rem;
+
+}
+
+/* ***********Testimonials****************** */
+
+.container.testimonials_container{
+    width: 40%;
+}
+
+.client_avatar{
+    width: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 0.4rem solid var(--color-primary-variant);
+}
+
+.testimonial{
+    background: var(--color-bg-variant);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    user-select: none;
+}
+.client_review{
+    color: var(--color-light);
+    font-weight: 300;
+    display: block;
+    width: 80%;
+    margin: 0.8rem auto 0;
+}
+
+
+/* ***********Contact page****************** */
+.container.contact_container{
+    width: 58%;
+    display: grid;
+    grid-template-columns: 33% 58%;
+    gap: 8rem;
+}
+
+.contact_options{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+.contact_option{
+    background: var(--color-bg-variant);
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.contact_option:hover{
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+.contact_option_icon{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact_option_icon a{
+    margin-top: .7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+
+/* ******* Contact Form ********* */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    color: var(--color-light);
+    resize: none;
+
+}
+
+/* ***********Footers****************** */
+footer{
+    background: var(--color-primary);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 7rem;
+}
+
+footer a {
+    color: var(--color-bg);
+}
+.footer_logo{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.permalinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto 3rem;
+}
+
+.footer_socials{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.footer_socials a {
+    background: var(--color-bg);
+    color: #fff;
+    padding: .8rem;
+    border-radius: .7rem;
+    display: flex;
+    border: 1px solid transparent;
+}
+
+.footer_socials a:hover{
+    background: transparent;
+    color: var(--color-bg);
+    border-color: var(--color-bg);
+}
+
+.footer_copyright{
+    margin-bottom: 4rem;
+    color: var(--color-bg);
+}
+
+
+
+
+/* ***********Media queeries****************** */
+
+@media(max-width:1024px){
+    .about_container{
+        grid-template-columns: 1fr;
+       gap: 0;
+    }
+    .about_me{
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+    .about_content p{
+     margin: 1rem 0 1.5rem;
+    }
+    .experience_container{
+        grid-template-columns: 1fr;
+    }
+    .experience_container > div{
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+    .experience_content {
+        padding: 1rem;
+    }
+    .services_container{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .service{
+        height: auto;
+    }
+    .portfolio_container{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    .container.testimonials_container{
+        width: var(--container-width-sm);
+
+    }
+    .client_review{
+        width: var(--container-width-sm);
+    }
+
+    .container.contact_container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+@media(max-width:600px){
+    .scroll_down, .header_socials{
+        display: none;
+    }
+
+    .about_me{
+        width: 65%;
+        margin: 0 auto 3rem;
+    }
+
+    .about_cards{
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .about_content{
+        text-align: center;
+    }
+    .about_content p{
+        margin: 1.5rem 0;
+    }
+    .experience_container{
+        gap: 1rem;
+    }
+    .experience_container > div{
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+    .services_container{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .portfolio_container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+   .container.contact_container{
+    width: var(--container-width-sm);
+   }
+
+   .permalinks{
+    flex-direction: column;
+    gap: 1.5rem;
+   }
+
+   .footer_socials{
+    margin-bottom: 2.6rem;
+   }
 }
