@@ -8,9 +8,11 @@ import { Nav } from './components/Nav'
 import { Potfolio } from './components/Potfolio'
 import { Services } from './components/Services'
 import { Testimonials } from './components/Testimonials'
+import { Toaster } from 'react-hot-toast'
 const App = () => {
   return (
     <>
+    <Toaster/>
   <Header />
   <Nav />
   <About />

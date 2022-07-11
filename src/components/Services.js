@@ -1,5 +1,33 @@
 import {BiCheck} from 'react-icons/bi'
-import { services } from '../data'
+import { services1, services2,services3 } from '../data'
+import {motion,Variants} from 'framer-motion';
+const cardAnime1 ={
+  offScreen:{
+    opacity: 0,
+  },
+  onScreen:{
+    opacity:1,
+    transition:{duration:.5}
+  }
+}
+const cardAnime2 ={
+  offScreen:{
+    opacity: 0,
+  },
+  onScreen:{
+    opacity:1,
+    transition:{duration:.5}
+  }
+}
+const cardAnime3 ={
+  offScreen:{
+    opacity: 0,
+  },
+  onScreen:{
+    opacity:1,
+    transition:{duration:.5}
+  }
+}
 export const Services = () => {
   return (
     <section id="services">
@@ -8,13 +36,17 @@ export const Services = () => {
 
       <div className="container services_container">
 
-        <article className="service">
+        <motion.article
+          initial="offScreen"
+          whileInView="onScreen"
+          variants={cardAnime1}
+         className="service">
           <div className="service_head">
-            <h3>UI/UX Design</h3>
+            <h3>User Interface</h3>
           </div>
           <ul className="service_list">
               {
-                services.map((item,i)=>(
+                services1.map((item,i)=>(
                  <li key={i}>
                    <BiCheck className='service_list-icon' />
                   <p>{item}</p>
@@ -22,35 +54,39 @@ export const Services = () => {
                 ))
               }
           </ul>
-        </article>
+        </motion.article>
 
-        <article className="service">
+        <motion.article 
+          initial="offScreen"
+          whileInView="onScreen"
+          variants={cardAnime2}
+        className="service">
           <div className="service_head">
             <h3>Web Development</h3>
           </div>
           <ul className="service_list">
               {
-                services.map((item,i)=>(
+                services2.map((item,i)=>(
                  <li key={i}>
                    <BiCheck className='service_list-icon' />
                   <p>{item}</p>
                  </li>
                 ))
               }
-              <li> 
-              <BiCheck className='service_list-icon' />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                </li>
           </ul>
-        </article>
+        </motion.article>
 
-        <article className="service">
+        <motion.article
+          initial="offScreen"
+          whileInView="onScreen"
+        variants={cardAnime3}
+         className="service">
           <div className="service_head">
-            <h3>Content Writing</h3>
+            <h3>Work Compatibility</h3>
           </div>
           <ul className="service_list">
               {
-                services.map((item,i)=>(
+                services3.map((item,i)=>(
                  <li key={i}>
                    <BiCheck className='service_list-icon' />
                   <p>{item}</p>
@@ -58,7 +94,7 @@ export const Services = () => {
                 ))
               }
           </ul>
-        </article>
+        </motion.article>
 
       </div>
     </section>
