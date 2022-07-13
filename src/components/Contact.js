@@ -102,7 +102,7 @@ export const Contact = () => {
             <BsWhatsapp className='contact_option_icon'/>
             <h4>Whtasapp</h4>
             <h5>+234**********</h5>
-            <a href="https://api.whatsapp.com/send?phone+2347030399140" target="blank">Send a Message</a>
+            <a href="https://api.whatsapp.com/send?phone=7030399140&text=Hi,%20I%20am%20...........%20I%20want%20to%20employ%20your%20service"  target="blank">Send a Message</a>
           </motion.article>
         </div>
         <form action='' ref={form} onSubmit={sendEmail}>

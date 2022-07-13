@@ -1,9 +1,4 @@
-import port1  from './assets/portfolio1.jpg'
-import port2  from './assets/portfolio2.jpg'
-import port3  from './assets/portfolio3.jpg'
-import port4  from './assets/portfolio4.jpg'
-import port5  from './assets/portfolio5.png'
-import port6  from './assets/portfolio6.jpg'
+
 import AVATAR1 from './assets/avatar1.jpg'
 import AVATAR2 from './assets/avatar2.jpg'
 import AVATAR3 from './assets/avatar3.jpg'
@@ -39,7 +34,7 @@ export const services1 = [
 export const services2 = [
     'Use of content management systems like Sanity',
     'Use of so many react libraries',
-    'Use of Formik anf Yup for advance form validatons',
+    'Use of Formik and Yup for advance form validatons',
     'Use of payment gateways like stripe',
     'Use of Next js for SEO and fullstack projects'
 ]
@@ -75,9 +70,9 @@ export const portfolios =[
     {
         id:4,
         image: 'https://res.cloudinary.com/chimoskient/image/upload/v1657501178/Screenshot_2022-07-11_at_00-49-28_E-commerce_b6abp6.png',
-        title:"full functional E-commerce cite with stripe",
+        title:"full functional E-commerce site with stripe",
         github: 'https://github.com/chimoski/E-commerce',
-        live:'https://e-commerce-58dfmge7s-chimoski.vercel.app/'
+        live:'https://e-commerce-red-eta.vercel.app/'
     },
     {
         id:5,
@@ -88,10 +83,10 @@ export const portfolios =[
     },
     {
         id:6,
-        image: port6,
-        title:"Crypto currency Dashboard & financial visualization",
-        github: 'https://github.com/chimoski',
-        live:'https://netlify.com'
+        image: 'https://res.cloudinary.com/chimoskient/image/upload/v1657697241/Screenshot_2022-07-13_at_08-23-30_airbnb_xf3hpb.png',
+        title:"Airbnb Landing page clone, with calendar and map",
+        github: 'https://github.com/chimoski/AirBnb-Frontend-clone',
+        live:'https://air-bnb-frontend-clone.vercel.app/'
     },
 ]
 
@@ -99,7 +94,7 @@ export const testimonials =[
     {
         id: 1,
         avatar: AVATAR1,
-        name: 'Tina Snow',
+        name: 'Tristan',
         review: ' Coming soon',
     },
     {

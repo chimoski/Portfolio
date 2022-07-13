@@ -6,7 +6,7 @@ import {motion,Variants} from 'framer-motion';
  const Cta = () => {
   return (
     <div className="cta">
-        <a href='https://drive.google.com/file/d/19Q1KTAGWsiFAEPQiyJW6o5_kbmEeqW2T/view?usp=sharing' target="blank"  className='btn cta-btn'>
+        <a href='https://drive.google.com/file/d/15SMpZ2rE5nvw7LR-3bqEmsN1LgJivFTi/view' target="blank"  className='btn cta-btn'>
           Resume
         <motion.div
         initial={{y:10}}

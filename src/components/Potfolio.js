@@ -25,7 +25,7 @@ export const Potfolio = () => {
           variants={cardAnime1}
            key={item.id} className="portfolio_items">
           <div className="portfolio_item_image">
-            <img src={item.image} alt="" width="100%" height="200px" />
+            <img src={item.image} alt="" width="100%" height="250px" />
           </div>
           <h3>{item.title}</h3>
           <div className="portfolio_item_cta">

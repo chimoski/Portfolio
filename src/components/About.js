@@ -7,6 +7,8 @@ import {motion,Variants} from 'framer-motion';
 
 
 
+
+
 const imageAnim = {
   offScreen:{
     opacity:0,
@@ -32,9 +34,9 @@ const aboutAnime ={
   }
 
 }
-export const About = () => {
+export const About = React.forwardRef((props, about) => {
   return (
-    <section id="about">
+    <section id="about" ref={about}>
       <h5>Get To Know</h5>
       <h2>About Me</h2>
 
@@ -80,4 +82,4 @@ export const About = () => {
       </div>
     </section>
   )
-}
+})

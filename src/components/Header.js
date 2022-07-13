@@ -4,6 +4,7 @@ import Freelancer from '../Freelancer.gif';
 import {motion,Variants} from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import {FaArrowAltCircleDown} from 'react-icons/fa';
+import React from "react";
 const imageAnim = {
   offScreen:{opacity:0, y:200},
   onScreen:{
@@ -15,9 +16,9 @@ const imageAnim = {
 
 
 
-export const Header = () => {
+export const Header = React.forwardRef((props,header) => {
   return (
-    <header id="home">
+    <header id="home" ref={header}>
       <motion.div 
       initial="offScreen"
        whileInView="onScreen"
@@ -59,4 +60,4 @@ export const Header = () => {
       </motion.div>
     </header>
   )
-}
+})

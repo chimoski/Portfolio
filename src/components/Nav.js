@@ -2,8 +2,9 @@ import {useState} from 'react'
 import {AiOutlineHome,AiOutlineUser, AiOutlineFolderOpen} from 'react-icons/ai'
 import {RiStackLine} from 'react-icons/ri'
 import {MdMiscellaneousServices, MdContactPhone} from 'react-icons/md'
-export const Nav = () => {
+export const Nav = ({headerID}) => {
   const [activeNav, setActive] = useState('');
+ 
   return (
    <nav>
      <a href="#home" 
